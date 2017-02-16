@@ -1,0 +1,16 @@
+Two's complement (TC) representations:
+
+a) 10 --> 0b01010 this is just binary, requiring 5 bits.
+
+b) 436 --> 0b0110110100 this is also just binary, except requires 10 bits.
+
+c) 1024 --> 0b010000000000 still binary, except now we need 12 bits.
+
+d) -13 --> 0b10011
+  13 in binary is 0b01101, so to get to TC we invert the bits to get 0b10010, then add 1 to get 0b10011.
+  
+e) -1023 --> 0b10000000001
+  1023 in binary is 0b0111111111, so to get to TC we invert the bits to get 0b10000000000, then add 1 to get 0b10000000001.
+  
+f) -1024 --> 0b110000000000
+  1024 in binary is 0b010000000000, so to get to TC we invert the bits to get 0b101111111111, then add 1 to get 0b110000000000.

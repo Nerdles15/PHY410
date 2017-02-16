@@ -1,0 +1,15 @@
+Need to compute the series f(n)=f(n-1)^2, with f(0)=2; what is the maximum n value that can be stored
+in the following C++ data types, assuming that an int is 2 bytes, a long int is 4 bytes (same as unsigned),
+and each byte is 4 bits?
+
+for reference: f(0)=2, f(1)=4, f(2)=16, f(3)=256, f(4)=65536, f(5)=4294967296
+**I'm assuming that, unless noted, the int/long int values are signed**
+
+a) int -> the largest number you can store as an int in a 4-bit architecture is 127 (2 bytes, 8 bits total; range -128,127),
+so the largest value of n for our series is then n=2.
+
+b) long int -> the largest number you can store as a long int in a 4-bit architecture is 32767 (4 bytes, 16 bits total;
+range -32768,32767), so the largest value of n for our series is then n=3.
+
+c) unsigned long int -> the largest number you can store as an unsigned long int in a 4-bit archetecture is 65535
+(4 bytes, 16 bits total; range 0,65535), so the largest value of n for our series is then n=3.
