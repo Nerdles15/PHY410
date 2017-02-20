@@ -1,0 +1,26 @@
+//Write a program to input two coordinate pairs in 2D space, give values back
+
+#include <iostream>
+#include <cmath>
+
+int main(){
+	float x1, y1, x2, y2, midpointx, midpointy, slope, yint, denom, pslope, pint;
+	std::cout << "Please enter two coordinate pairs, x1 y1 x2 y2: ";
+	std::cin >> x1 >> y1 >> x2 >> y2;
+	midpointx = (x1 + x2)/2;
+	midpointy = (y1 + y2)/2;
+	slope = (y2 - y1)/(x2 - x1);
+	denom = (x2 - x1); //avoid dividing by 0
+	yint = y1 - slope * x1;
+	pslope = -1/slope; //need perpendiular line, oops
+	pint = y1 - pslope * x1;
+	std::cout << "Your midpoint is: x = " << midpointx << ", y = " << midpointy << ".\n";
+	if (denom == 0) {
+		std::cout << "INITIATING SELF DESTRUCT SEQUENCE. DIV BY 0. [INSERT OTHER ERROR HERE]." << std::endl;
+	} else {
+		std::cout << "Your slope is: m = " << slope << "\n";
+		std::cout << "Your y-intercept is: y = " << yint << ".\n";
+		std::cout << "Your equation is: y = (" << slope << ")x + (" << yint << ").\n";
+		std::cout << "A perpendicular line through (" << x1 << ", " << y1 << ") is: y = (" << pslope << ")x + (" << pint << ").\n";
+	}
+}
