@@ -1,0 +1,175 @@
+//Create a dispenser that offers one of three entrees, three sides, and eight beverages.
+//And specials.
+
+#include <iostream>
+#include <string>
+
+int main(void) {
+	int price, eprice, sprice, bprice;
+	std::string response1, response2, response3;
+	std::cout << "Welcome to Sal's specials! Please choose one entree (e#), one side (s#),"
+	" and one beverage (b#) from the following: ";
+	std::cout << "\n\ne1: Veggie burger $7"
+	"\ne2: Falafel wrap $6"
+	"\ne3: Salami sandwich $9"
+	"\n\ns1: Freedom fries $2"
+	"\ns2: Hummus with pita chips $3"
+	"\ns3: Celery and carrots $2"
+	"\n\nb1: Tap water (free)"
+	"\nb2: Sparkling water $2"
+	"\nb3: Domestic beer $4"
+	"\nb4: Imported beer $6"
+	"\nb5: Red wine $7"
+	"\nb6: White wine $7"
+	"\nb7: Coffee $1"
+	"\nb8: Tea $1"
+	"\n\nMay I take your order, master? ";
+
+	std::cin >> response1 >> response2 >> response3;
+
+//response 1
+	if (response1 == "e1") {
+		eprice = 7;
+	} else if (response1 == "e2") {
+		eprice = 6;
+	} else if (response1 == "e3") {
+		eprice = 9;
+	} else if (response1 == "s1") {
+		sprice = 2;
+	} else if (response1 == "s2") {
+		sprice = 3;
+	} else if (response1 == "s3") {
+		sprice = 2;
+	} else if (response1 == "b1") {
+		bprice = 0;
+	} else if (response1 == "b2") {
+		bprice = 2;
+	} else if (response1 == "b3") {
+		bprice = 4;
+	} else if (response1 == "b4") {
+		bprice = 6;
+	} else if (response1 == "b5") {
+		bprice = 7;
+	} else if (response1 == "b6") {
+		bprice = 7;
+	} else if (response1 == "b7") {
+		bprice = 1;
+	} else if (response1 == "b8") {
+		bprice = 1;
+	} else {
+		std::cout << "Order 1, " << response1 << ", was not a valid order..." << std::endl;
+	}
+
+//response 2
+	if (response2 == "e1") {
+		eprice = 7;
+	} else if (response2 == "e2") {
+		eprice = 6;
+	} else if (response2 == "e3") {
+		eprice = 9;
+	} else if (response2 == "s1") {
+		sprice = 2;
+	} else if (response2 == "s2") {
+		sprice = 3;
+	} else if (response2 == "s3") {
+		sprice = 2;
+	} else if (response2 == "b1") {
+		bprice = 0;
+	} else if (response2 == "b2") {
+		bprice = 2;
+	} else if (response2 == "b3") {
+		bprice = 4;
+	} else if (response2 == "b4") {
+		bprice = 6;
+	} else if (response2 == "b5") {
+		bprice = 7;
+	} else if (response2 == "b6") {
+		bprice = 7;
+	} else if (response2 == "b7") {
+		bprice = 1;
+	} else if (response2 == "b8") {
+		bprice = 1;
+	} else {
+		std::cout << "Order 2, " << response2 << ", was not a valid order..." << std::endl;
+	}
+
+//response 3
+	if (response3 == "e1") {
+		eprice = 7;
+	} else if (response3 == "e2") {
+		eprice = 6;
+	} else if (response3 == "e3") {
+		eprice = 9;
+	} else if (response3 == "s1") {
+		sprice = 2;
+	} else if (response3 == "s2") {
+		sprice = 3;
+	} else if (response3 == "s3") {
+		sprice = 2;
+	} else if (response3 == "b1") {
+		bprice = 0;
+	} else if (response3 == "b2") {
+		bprice = 2;
+	} else if (response3 == "b3") {
+		bprice = 4;
+	} else if (response3 == "b4") {
+		bprice = 6;
+	} else if (response3 == "b5") {
+		bprice = 7;
+	} else if (response3 == "b6") {
+		bprice = 7;
+	} else if (response3 == "b7") {
+		bprice = 1;
+	} else if (response3 == "b8") {
+		bprice = 1;
+	} else {
+		std::cout << "Order 3, " << response3 << ", was not a valid order..." << std::endl;
+	}
+
+//calculate price
+	price = eprice + sprice + bprice;
+
+//special 1
+
+	if (response1 == "e1" || response1 == "s1" || response1 == "b1" || response1 == "b2" || response1 == "b7" || response1 == "b8") {
+		if (response2 == "e1" || response2 == "s1" || response2 == "b1" || response2 == "b2" || response2 == "b7" || response2 == "b8") {
+			if (response3 == "e1" || response3 == "s1" || response3 == "b1" || response3 == "b2" || response3 == "b7" || response3 == "b8") {
+				std::cout << "Congratulations! You've found a secret special! Enjoy your discount." << std::endl;
+				price = 8;
+			}
+		}
+	}
+
+//special 2
+
+	if (response1 == "e2" || response1 == "s2" || response1 == "b7" || response1 == "b8") {
+		if (response2 == "e2" || response2 == "s2" || response2 == "b7" || response2 == "b8") {
+			if (response3 == "e2" || response3 == "s2" || response3 == "b7" || response3 == "b8") {
+				std::cout << "You've activated my trap card! Enjoy your discount." << std::endl;
+				price = 7;
+			}
+		}
+	}
+
+//special 3
+
+	if (response1 == "e3" || response1 == "s1" || response1 == "s2" || response1 == "s3" || response1 == "b3" || response1 == "b4" || response1 == "b5" || response1 == "b6") {
+		if (response2 == "e3" || response2 == "s1" || response2 == "s2" || response2 == "s3" || response2 == "b3" || response2 == "b4" || response2 == "b5" || response2 == "b6") {
+			if (response3 == "e3" || response3 == "s1" || response3 == "s2" || response3 == "s3" || response3 == "b3" || response3 == "b4" || response3 == "b5" || response3 == "b6") {
+				std::cout << "Congratulations! You've found a secret special! Enjoy your discount." << std::endl;
+				price = 13;
+			}
+		}
+	}
+
+//output
+
+	if (response1 == response2 || response2 == response3 || response1 == response3) {
+		std::cout << "Just kidding, ignore the specials. You can't have that. The world is unfair." << std::endl;
+		price = 0;
+	}
+	std::cout << "You have selected: " << response1 << " + " << response2 << " + "  << response3 << ", and that will be $" << price << " please." << std::endl;
+
+}
+
+
