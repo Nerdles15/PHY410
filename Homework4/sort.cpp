@@ -53,3 +53,6 @@ int main(int argc, char * argv[]) {
 	sorted.close();
 
 }
+
+//wasn't able to get this working fully- problem likely in header file/source file.
+//Syntaxes here are correct, but errors out in my library while compiling...
