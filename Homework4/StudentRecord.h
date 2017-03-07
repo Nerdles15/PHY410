@@ -18,14 +18,14 @@ class StudentRecord {
 		std::string firstname();
 		float score() const;
 
-		bool operator<( StudentRecord const & right) const {
-
-			return(score() < right.score());
-		}
-		bool operator>( StudentRecord const & right) const {
-
-			return(score() > right.score());
-		}
+		//bool operator<( StudentRecord const & right) const {
+//
+//			return(score() < right.score());
+//		}
+//		bool operator>( StudentRecord const & right) const {
+//
+//			return(score() > right.score());
+//		}
 
 
 	private:
