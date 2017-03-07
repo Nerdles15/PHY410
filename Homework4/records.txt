@@ -1,0 +1,7 @@
+Burnley, Ben, 95.0
+Draiman, David, 92.0
+P, Z something, 88.0
+Gontier, Adam, 90.5
+Perry, Steve, 75.3
+Hudson, Marc, 42.82
+Key, Ryan, 77.77
