@@ -1,0 +1,43 @@
+~~ Hubble Groups ~~
+
+Group 1:
+-NGC 292 (S. Mag.)
+-L. Mag.
+
+Group 2:
+-NGC 6822
+
+Group 3:
+-NGC 598
+-NGC 221
+-NGC 224
+
+Group 4:
+-NGC 5457
+-NGC 5194
+-NGC 4258
+-NGC 5055
+-NGC 4449
+-NGC 4736
+-NGC 4151
+-NGC 4214
+
+Group 5:
+-NGC 5236
+
+Group 6:
+-NGC 1068
+
+Group 7:
+-NGC 7331
+
+Group 8:
+-NGC 4486
+-NGC 4649
+-NGC 4826
+-NGC 4382
+-NGC 4472
+-NGC 3627
+
+Group 9:
+-NGC 3031
