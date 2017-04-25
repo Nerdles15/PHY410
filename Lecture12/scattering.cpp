@@ -11,7 +11,7 @@
    Initialize with :
    * V0 : potential well depth
 
-   Then execuate with operator()(r), which will return the Lennard-Jones
+   Then execute with operator()(r), which will return the Lennard-Jones
    potential at r. r must be in units of the potential's minimum, so
    the function is minimized at r = 1.0
    ------------------------------------------------  
@@ -49,6 +49,25 @@ protected :
   double _V0;
 };
 
+/* 
+   ------------------------------------------------
+   yukawa_potential : class to implement the Yukawa potential
+   Initialize with :
+   * V0
+   Then execute with...something...somehow...like above
+   ------------------------------------------------  
+*/
+class yukawa_potential {
+public :
+  yukawa_potential( double V0 ) : _V0(V0) {
+  };
+  double operator() ( double r) const {
+    if ( r == 0.0 ) return _V0;
+    else return _V0 * 1/r * (exp (r/10));
+  }
+protected :
+  double _V0;
+};
 
 /* 
    ------------------------------------------------
@@ -206,10 +225,10 @@ int main()
 
   using namespace std;
   cout << " Classical Scattering from Lennard-Jones potential" << endl;
-  double E = 0.705;      // set global value of E
+  double E = 0.35025;      // set global value of E
   cout << " Energy E = " << E << endl;
-  double b_min = 0.6, db = 0.3;
-  int n_b = 6;
+  double b_min = 0.6, db = 0.2;
+  int n_b = 15;
   double b = 0.0;
   double V0 = 1.0;
   cout << " b      " << '\t' << "Theta(b)\n"
@@ -240,3 +259,83 @@ int main()
   }
 
 }
+
+/*int main()
+{
+
+  using namespace std;
+  cout << " Classical Scattering from Hard Sphere potential" << endl;
+  double E = 0.705;      // set global value of E
+  cout << " Energy E = " << E << endl;
+  double b_min = 0.6, db = 0.3;
+  int n_b = 6;
+  double b = 0.0;
+  double V0 = 1.0;
+  cout << " b      " << '\t' << "Theta(b)\n"
+       << " -------" << '\t' << "--------" << endl;
+  hard_sphere_potential hs( V0 );
+  for (int i = 0; i < n_b; i++) {
+
+    stringstream sstream;
+    sstream << "trajfile_cpp_" << i << ".data";
+    ofstream file(sstream.str().c_str());
+
+    b = b_min + i * db;
+    std::vector< std::pair<double,double> > trajectory;
+    double deflection = 0.0;
+    Theta<hard_sphere_potential> theta( hs, E, b, 3.5, 100 );
+    theta.trajectory(deflection, trajectory);
+    std::cout << " " << b << "\t\t" << deflection << std::endl;
+    for (int i = 0; i < trajectory.size(); i++) {
+      double r = trajectory[i].first;
+      double theta = trajectory[i].second;
+      char buff[1000];
+      sprintf(buff, "%8.4f %8.4f", r*cos(theta), r*sin(theta));
+      file << buff << std::endl;
+    }
+    file << std::endl;
+
+    file.close();
+  }
+
+}*/
+
+/*int main()
+{
+
+  using namespace std;
+  cout << " Classical Scattering from Yukawa potential" << endl;
+  double E = 1.41;      // set global value of E
+  cout << " Energy E = " << E << endl;
+  double b_min = 0.6, db = 0.12;
+  int n_b = 15;
+  double b = 0.0;
+  double V0 = 1.0;
+  cout << " b      " << '\t' << "Theta(b)\n"
+       << " -------" << '\t' << "--------" << endl;
+  yukawa_potential yp( V0 );
+  for (int i = 0; i < n_b; i++) {
+
+    stringstream sstream;
+    sstream << "trajfile_cpp_" << i << ".data";
+    ofstream file(sstream.str().c_str());
+
+    b = b_min + i * db;
+    std::vector< std::pair<double,double> > trajectory;
+    double deflection = 0.0;
+    Theta<yukawa_potential> theta( yp, E, b, 3.5, 100 );
+    theta.trajectory(deflection, trajectory);
+    std::cout << " " << b << "\t\t" << deflection << std::endl;
+    for (int i = 0; i < trajectory.size(); i++) {
+      double r = trajectory[i].first;
+      double theta = trajectory[i].second;
+      char buff[1000];
+      sprintf(buff, "%8.4f %8.4f", r*cos(theta), r*sin(theta));
+      file << buff << std::endl;
+    }
+    file << std::endl;
+
+    file.close();
+  }
+
+}*/
