@@ -12,7 +12,7 @@ def trapezoid(f, a, b, n):
     return s * h / 2
 
 
-def adaptive_trapezoid(f, a, b, acc, output=False):
+def adaptive_trapezoid(f, a, b, acc, output=True):
     """
     Uses the adaptive trapezoidal method to compute the definite integral
     of f from a to b to desired accuracy acc. 
